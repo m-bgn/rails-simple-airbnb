@@ -1,0 +1,49 @@
+<div class="nav"></div>
+
+<div class="container mt-3">
+  <div class="row">
+  <h2>All our flats</h2>
+  <div class="row">
+  <p>Our <%= Flat.count %> flats.</p>
+    <div class="col-lg-4">
+  <div class="row">
+    <div class="col-12">
+      <h1>All our Flats</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+        <p>All <%= Flat.count %> flats.</p>
+    </div>
+  </div>
+  <div class="col-4">
+          <div class="flat-card">
+          <% @flats.each do |flat| %>
+            <div class="flat-card-image" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200')"></div>
+            <div class="flat-card-content">
+              <div class="flat-card-title">
+                <h4><%= flat.name %></h4>
+              </div>
+              <p><%= flat.address %></p>
+              <div class="flex">
+                <div class="flex">
+                  <i class="fas fa-users"></i><span><%= flat.number_of_guests %></span>
+                </div>
+                <div class="flex ml-3">
+                  <i class="fas fa-euro-sign"></i><span><%= flat.price_per_night %></span>
+                </div>
+              </div>
+            </div>
+          <% end %>
+            <div class="flat-card-actions">
+              <a href="/flats/4643">More info</a>
+              <a class="ml-3 text-warning" href="/flats/4643/edit">Edit</a>
+              <a data-confirm="Are you sure?" class="ml-3 text-danger" rel="nofollow" data-method="delete" href="/flats/4643">Remove</a>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</div>
+
